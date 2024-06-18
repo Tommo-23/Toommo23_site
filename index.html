@@ -248,23 +248,26 @@
         }
 
         .groups .button-group {
-             display: flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-        }
+}
 
-        .group-item {
+.group-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100px;
-    margin-bottom: 3.0rem; /* Aumenta lo spazio tra i bottoni */
+    margin-bottom: 1rem; /* Aumenta ulteriormente lo spazio tra i bottoni */
 }
 
 .group-item a {
     width: 100%; /* Imposta la larghezza del pulsante a 100% del contenitore */
     text-align: center;
+    padding: 0.5rem 0; /* Aggiungi padding per aumentare l'area cliccabile */
+    margin-bottom: 1rem; /* Aggiungi un margine inferiore */
+    margin-top: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -277,11 +280,13 @@
 
     .group-item {
         flex: 1;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem; /* Aumenta ulteriormente lo spazio tra i bottoni */
     }
 
     .group-item a {
         width: 100px; /* Assicura che il pulsante sia largo quanto l'immagine */
+        margin-bottom: 1rem; /* Aggiungi un margine inferiore */
+        margin-top: 1rem;
     }
 }
 
@@ -310,22 +315,23 @@
             <img src="https://i.imgur.com/8bTOYAT.png" alt="I use Fedora btw" style="width:100%;max-width:600px;margin-top:1rem;">
         </section>
         <section class="groups">
-            <h3>telegram groups</h3>
-            <div class="circle-container">
-                <div class="group-item">
-                    <div class="circle">
-                        <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
+            <section class="groups">
+                <h3>telegram groups</h3>
+                <div class="circle-container">
+                    <div class="group-item">
+                        <div class="circle">
+                            <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
+                        </div>
+                        <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
                     </div>
-                    <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
-                </div>
-                <div class="group-item">
-                    <div class="circle">
-                        <img src="https://i.imgur.com/jzFK8MK.jpg" alt="Group 2">
+                    <div class="group-item">
+                        <div class="circle">
+                            <img src="https://i.imgur.com/jzFK8MK.jpg" alt="Group 2">
+                        </div>
+                        <a href="https://t.me/renatechnologyofficial" class="button">Rena</a>
                     </div>
-                    <a href="https://t.me/renatechnologyofficial" class="button">Rena</a>
                 </div>
-            </div>
-        </section>        
+            </section>                
         <section class="friends">
             <h3>Friends</h3>
             <details id="friends">
