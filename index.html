@@ -254,11 +254,17 @@
     gap: 1rem;
         }
 
-         .group-item {
+        .group-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100px;
+    margin-bottom: 3.0rem; /* Aumenta lo spazio tra i bottoni */
+}
+
+.group-item a {
+    width: 100%; /* Imposta la larghezza del pulsante a 100% del contenitore */
+    text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -273,8 +279,11 @@
         flex: 1;
         margin-bottom: 1rem;
     }
+
+    .group-item a {
+        width: 100px; /* Assicura che il pulsante sia largo quanto l'immagine */
+    }
 }
- 
 
     </style>
 </head>
