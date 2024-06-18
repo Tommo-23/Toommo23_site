@@ -248,26 +248,33 @@
         }
 
         .groups .button-group {
-            justify-content: center; /* Ensures symmetrical alignment */
-            gap: 2.5rem; /* Matches the gap of the images */
+             display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
         }
 
-        .groups .button-group a {
-            width: 100px; /* Ensure the buttons have the same width as the circles */
-            text-align: center;
-        }
+         .group-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
 
-        @media (max-width: 600px) {
-            .groups .circle-container {
-                flex-direction: column;
-                align-items: center; /* Ensures images are centered on small screens */
-            }
+@media (max-width: 600px) {
+    .groups .circle-container, .groups .button-group {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap: 1rem;
+    }
 
-            .groups .button-group {
-                flex-direction: column;
-                align-items: center; /* Ensures buttons are centered on small screens */
-            }
-        }
+    .group-item {
+        flex: 1;
+        margin-bottom: 1rem;
+    }
+}
+ 
 
     </style>
 </head>
@@ -296,19 +303,20 @@
         <section class="groups">
             <h3>telegram groups</h3>
             <div class="circle-container">
-                <div class="circle">
-                    <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
+                <div class="group-item">
+                    <div class="circle">
+                        <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
+                    </div>
+                    <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
                 </div>
-                <div class="circle">
-                    <img src="https://i.imgur.com/jzFK8MK.jpg" alt="Group 2">
+                <div class="group-item">
+                    <div class="circle">
+                        <img src="https://i.imgur.com/jzFK8MK.jpg" alt="Group 2">
+                    </div>
+                    <a href="https://t.me/renatechnologyofficial" class="button">Rena</a>
                 </div>
             </div>
-            <div class="button-group">
-                <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
-                <a href="https://t
-.me/renatechnologyofficial" class="button">Rena</a>
-            </div>
-        </section>
+        </section>        
         <section class="friends">
             <h3>Friends</h3>
             <details id="friends">
@@ -318,11 +326,11 @@
                     <li><a href="https://t.me/matteeoc" target="_blank">Matteo</a></li>
                     <li><a href="https://t.me/Fraaa_27" target="_blank">Francesco</a></li>
                     <li><a href="https://t.me/marzGab" target="_blank">gabriled</a
-                     <li><a href="https://t.me/cir_uzz" target="_blank">Ciruzz</a></li>
-                 <li><a href="https://t.me/marcymir" target="_blank">MarcyMir</a></li>
+                    li><a href="https://t.me/marcymir" target="_blank">MarcyMir</a></li>
                  <li><a href="https://t.me/Oma_r71" target="_blank">OmarX</a></li>
                   <li><a href="https://t.me/Michael_Jackson1987" target="_blank">Manuel</a></li>
                    <li><a href="https://t.me/vise08" target="_blank">Vise08</a></li>
+                   <li><a href="https://t.me/cir_uzz" target="_blank">Ciruzz</a></li>
                 </ul>
             </details>
         </section>
