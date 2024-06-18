@@ -248,35 +248,24 @@
         }
 
         .groups .button-group {
-            display: flex;
-            justify-content: center;
+            justify-content: center; /* Ensures symmetrical alignment */
             gap: 2.5rem; /* Matches the gap of the images */
-            flex-wrap: wrap;
         }
 
-        .group-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .group-item a {
-            margin-top: 1rem;
+        .groups .button-group a {
             width: 100px; /* Ensure the buttons have the same width as the circles */
             text-align: center;
         }
 
         @media (max-width: 600px) {
             .groups .circle-container {
-                justify-content: space-around; /* Ensures images are properly aligned on small screens */
+                flex-direction: column;
+                align-items: center; /* Ensures images are centered on small screens */
             }
 
             .groups .button-group {
-                justify-content: space-around; /* Ensures buttons are properly aligned on small screens */
-            }
-
-            .group-item {
-                flex: 1;
+                flex-direction: column;
+                align-items: center; /* Ensures buttons are centered on small screens */
             }
         }
 
@@ -307,13 +296,17 @@
         <section class="groups">
             <h3>telegram groups</h3>
             <div class="circle-container">
-                <div class="group-item">
-                    <div class="circle">
-                        <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
-                    </div>
-                    <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
+                <div class="circle">
+                    <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
                 </div>
-                <a href="https://t.me/renatechnologyofficial" class="button">Rena</a>
+                <div class="circle">
+                    <img src="https://i.imgur.com/jzFK8MK.jpg" alt="Group 2">
+                </div>
+            </div>
+            <div class="button-group">
+                <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
+                <a href="https://t
+.me/renatechnologyofficial" class="button">Rena</a>
             </div>
         </section>
         <section class="friends">
