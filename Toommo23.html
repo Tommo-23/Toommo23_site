@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Toommo's Site</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/115174306?s=64">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles */
+        body {
+            font-family: 'Lexend', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: #000;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header .propic {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main {
+            padding: 2rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-me, .passions, .friends, .groups {
+            margin-bottom: 2rem;
+        }
+
+        .about-me h2, .passions h3, .friends h3, .groups h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #fff;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            transform: scale(0);
+        }
+
+        .button:hover {
+            background-color: #ccc;
+            transform: scale(1.05);
+        }
+
+        .button:hover::after {
+            transform: scale(1);
+        }
+
+        details {
+            background-color: #333;
+            border: 1px solid #666;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        details summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        details ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        details ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        details summary:hover {
+            color: #ccc;
+        }
+
+        details a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        details a:visited {
+            color: #fff;
+        }
+
+        footer {
+            background-color: #000;
+            border-top: 1px solid #333;
+            text-align: center;
+            padding: 1rem 0;
+            width: 100%;
+        }
+
+        footer p {
+            color: #666;
+        }
+
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        footer .social-links a:visited {
+            color: #fff;
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        section:nth-of-type(2) {
+            animation-delay: 0.3s;
+        }
+
+        section:nth-of-type(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .passions p {
+            margin-bottom: 1rem;
+        }
+
+        .groups .circle-container {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem; /* Increased the gap slightly */
+            margin-bottom: 1rem;
+        }
+
+        .groups .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .groups .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .groups .button-group {
+            justify-content: center; /* Ensures symmetrical alignment */
+            gap: 2.5rem; /* Matches the gap of the images */
+        }
+
+        .groups .button-group a {
+            width: 100px; /* Ensure the buttons have the same width as the circles */
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .groups .circle-container {
+                flex-direction: column;
+            }
+
+            .groups .button-group {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="welcome" style="animation-delay: 0s;">Welcome to my personal site! :)</div>
+            <img src="https://i.imgur.com/qILLGJm.png" alt="Foto profilo" class="propic">
+            <h1>Toommo23</h1>
+        </div>
+    </header>
+    <main>
+        <section class="about-me">
+            <h2>About me</h2>
+            <div class="button-group">
+                <a href="https://t.me/SetupToommo23" class="button">Setup</a>
+                <a href="https://blogs.mtdv.me/videos/zN5TEIRUvh" class="button">blog crypto</a>
+            </div>
+            <p>Hi! I'm Leonardo (Tommo23), I live in Lombardia, Italy and I am 15yo.</p>
+        </section>
+        <section class="passions">
+            <h3>Passions</h3>
+            <p>I love programming in python and I like making sites in HTML,CSS and JS. I enjoy playing handball and playing video games. I love the world of Linux. I use Fedora btw.</p>
+            <img src="https://i.imgur.com/8bTOYAT.png" alt="I use Fedora btw" style="width:100%;max-width:600px;margin-top:1rem;">
+        </section>
+        <section class="groups">
+            <h3>telegram groups</h3>
+            <div class="circle-container">
+                <div class="circle">
+                    <img src="https://i.imgur.com/0eUmuLv.png" alt="Group 1">
+                </div>
+                <div class="circle">
+                    <img src="https://i.imgur.com/jzFK8MK.jpg" alt="Group 2">
+                </div>
+            </div>
+            <div class="button-group">
+                <a href="https://t.me/TechHubOfficialCommunity" class="button">TechHub</a>
+                <a href="https://t.me/renatechnologyofficial" class="button">Rena</a>
+            </div>
+        </section>
+        <section class="friends">
+            <h3>Friends</h3>
+            <details id="friends">
+                <summary>See Friends</summary>
+                <ul>
+                    <li><a href="https://just-lucky.github.io/justLucky-Portfolio/" target="_blank">JustLucky</a></li>
+                    <li><a href="https://t.me/matteeoc" target="_blank">Matteo</a></li>
+                    <li><a href="https://t.me/Fraaa_27" target="_blank">Francesco</a></li>
+                    <li><a href="https://t.me/marzGab" target="_blank">gabriled</a
+                    <li><a href="https://t.me/cir_uzz" target="_blank">Ciruzz</a></li>
+                 <li><a href="https://t.me/marcymir" target="_blank">MarcyMir</a></li>
+                 <li><a href="https://t.me/Oma_r71" target="_blank">OmarX</a></li>
+                  <li><a href="https://t.me/Michael_Jackson1987" target="_blank">Manuel</a></li>
+                   <li><a href="https://t.me/vise08" target="_blank">Vise08</a></li>
+                </ul>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+           <div class="social-links">
+               <a href="https://github.com/tommo-23" target="_blank">GitHub</a>
+                 <a href="https://t.me/Toommo23" target="_blank">Telegram</a>
+           </div>
+           <p>by Toommo23, , updated to 03/04/2024 at 22:13 PM</p>
+       </div>
+    </footer>
+    </body>
+    
